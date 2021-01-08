@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
     ]
 
     def title_include
-        if title.present? && CLICKBAIT_PATTERNS.none? {|p| title.match(p)}
+        if title.present? && CLICKBAIT_PATTERNS.none? {|p| title.match(p)} #iterating through Click_bait pattern to find match
             errors.add(:title, "title not clickbait-y enough")
         end
     end
